@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+}
+
+div {
+  align-content: center;
+  margin: 0 auto;
+}
+
+#container, #money {
+  padding: 20px;
+  border-radius: 10px;
+  border-width: thin;
+  border-width:2px;
+  border-style:solid;
+  border-color:black;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+a {
+  text-align: center;
+}

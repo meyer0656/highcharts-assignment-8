@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2018 FL Senate District 8 Metrics</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/themes/avocado.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <link rel="stylesheet" href="styles/district8.css">
+  </head>
+  <body>
+    <h1>Senate District 8 Campaign Metrics</h1>
+    <h2>Registered Voters</h2>
+    <!-- Voters -->
+    <div id="container" style="width:50%; height:400px;"></div>
+    <script>
+        Highcharts.chart('container', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Voter Registration by Party'
+            },
+            subtitle: {
+                text: 'Source: Florida Division of Elections'
+            },
+            xAxis: {
+                categories: ['Democrats', 'Republicans', 'Independents', 'Other']
+            },
+            yAxis: {
+                title: {
+                    text: 'Total Voters'
+                }
+            },
+            series: [{
+                name: 'District 8',
+                data: [135118, 111404, 70311, 2223]
+            }]
+
+        });
+    </script>
+    <center>Data Source: <a href="https://dos.myflorida.com/media/699875/2018pri_statesenate.pdf">Voter Registration Statistics</a></center>
+    </div>
+    <h2>Contributions by Type</h2>
+    <!-- Money -->
+    <div id="money" style="width:50%; height:400px;"></div>
+    <script>
+    Highcharts.chart('money', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Senate District 8 Fundraising'
+        },
+        subtitle: {
+            text: 'Source: Florida Division of Elections'
+        },
+        xAxis: {
+            categories: [
+                'Perry [R]',
+                'Enneking [D]',
+                'Goston [I]'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Amount in Dollars'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Hard Money',
+            data: [687867, 566542.74, 9500]
+
+        }, {
+            name: 'Loans',
+            data: [0, 10000, 1300]
+
+        }, {
+            name: 'Inkind Donations',
+            data: [590440.83, 163871.36, 0]
+
+        }, {
+            name: 'PAC Money',
+            data: [259279, 580585.66, 0]
+        }]
+    });
+    </script>
+    <center>Data Sources: <a href="https://dos.elections.myflorida.com/candidates/CanDetail.asp?account=69502">Perry</a> | <a href="https://dos.elections.myflorida.com/committees/ComDetail.asp?account=69601">Perry PAC</a> | <a href="https://dos.elections.myflorida.com/candidates/CanDetail.asp?account=70055">Enneking</a> | <a href="https://dos.elections.myflorida.com/committees/ComDetail.asp?account=70081">Enneking PAC</a> | <a href="https://dos.elections.myflorida.com/candidates/CanDetail.asp?account=72771">Goston</a></center>
+    </div>
+
+  </body>
+</html>
